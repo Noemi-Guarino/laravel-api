@@ -18,6 +18,13 @@ class PostController extends Controller
             'success' => true,
             'results' => $posts,
         ]);
+
+        // OPPURE 
+            //'code'=> 200, (vuol dire che è vero)
+            //'message' => 'success',
+            //'results'=> [ 
+            //    'posts' => $posts,
+            //],
     }
 
     public function show(string $slug)
