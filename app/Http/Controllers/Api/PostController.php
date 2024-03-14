@@ -29,7 +29,7 @@ class PostController extends Controller
 
     public function show(string $slug)
     {
-        $post = Post::where('slug', $slug)->firstOrFail();
+        $post = Post::with('type', 'technologies')->where('slug', $slug)->firstOrFail();
 
         return response()->json([
             'success'=> true,
