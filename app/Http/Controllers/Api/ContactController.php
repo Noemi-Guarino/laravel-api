@@ -13,7 +13,10 @@ use App\Http\Requests\Contact\StoreRequest as ContactStoreRequest;
 class ContactController extends Controller
 {
     public function store(ContactStoreRequest $request){
-        $contact = Contact::create();
-        return response()->json($request->validated());
+        $contact = Contact::create($request->validated());
+        return response()->json([
+            'success' => true,
+            'message'=> 'Contatto salvato con successo'
+        ]);
     }
 }
